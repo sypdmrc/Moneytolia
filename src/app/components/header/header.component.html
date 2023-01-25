@@ -1,0 +1,11 @@
+<div id="header">
+  <div class="header-top">
+    <div class="logo">
+      <a href="/"><img src="/assets/img/logo.svg" alt="Moneytolia"></a>
+    </div>
+    <div class="account-links">
+      <a routerLink="/auth" *ngIf="!isLoggedIn()">Login</a>
+      <a (click)="logout()" *ngIf="isLoggedIn()">Logout</a>
+    </div>
+  </div>
+</div>

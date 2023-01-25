@@ -1,0 +1,131 @@
+:host {
+  position: absolute;
+  left: 305px;
+  top: 75px;
+  width: calc(100% - 305px);
+}
+
+#create-campaign {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+
+  .create-form {
+    background: rgb(6, 46, 77);
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    position: relative;
+
+    .campaign-point {
+      position: absolute;
+      left: 15px;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(236, 243, 248);
+      border-radius: 15px;
+      bottom: 15px;
+      color: #433f3f;
+    }
+
+    .campaign-date {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+
+    .campaign-btn {
+      display: flex;
+      justify-content: center;
+      height: 35px;
+
+      button {
+        border: none;
+        min-width: 100px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      min-height: 30px;
+      outline: none;
+      border: none;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      min-height: 100px;
+      outline: none;
+      border: none;
+    }
+
+
+  }
+
+}
+
+.dialog {
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px #bbbbbb;
+  font-size: 120%;
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  width: 300px;
+  z-index: 10000;
+  font-size: 15px;
+  background-color: #51a351;
+  color: #fff;
+}
+
+.campaign-wrapper {
+  margin-top: 20px;
+}
+
+@media (min-width:671px) and (max-width:820px) {
+  #create-campaign {
+    max-width: 360px;
+  }
+}
+
+@media (max-width:670px) {
+  :host {
+    left: 50px;
+    width: calc(100% - 50px);
+
+    #create-campaign {
+      padding: 20px;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .dialog {
+        padding: 10px 5px;
+        font-size: 12px;
+        width: 250px;
+      }
+    }
+  }
+}

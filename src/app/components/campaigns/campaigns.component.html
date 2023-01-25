@@ -1,0 +1,71 @@
+<div class="container"  *ngIf="campaigns.length>0; else no_campaigns">
+  <div id="allCampaigns">
+    <div class="mb-20 alert alert-primary">
+      {{campaigns.length}} campaigns found!
+    </div>
+    <ng-template #campaignList>
+      <div id="campaign-wrapper">
+        <div class="campaign-item" *ngFor="let item of campaigns">
+          <div class="campaign-title">
+            <span>{{item.title}}</span>
+            <div class="editButtons">
+              <button type="button" class="updateBtn" (click)="openModal(item.id,item.title,item.description)">Güncelle</button>
+              <button type="button" class="deleteBtn" (click)="deleteCampaign(item.id)">Sil</button>
+            </div>
+          </div>
+          <div class="campaign-description">
+            {{item.description}}
+          </div>
+          <div class="campaign-point">
+            <span>{{item.point}}</span>
+            <div class="counterButtons">
+              <button type="button" (click)="incrementPoint(item)">+</button>
+              <button type="button" (click)="decrementPoint(item)">-</button>
+            </div>
+          </div>
+
+          <div class="campaign-date">
+            {{item.datePublished}}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="campaignList"></ng-template>
+  </div>
+</div>
+
+
+<ng-template #no_campaigns>
+  <div class="no-campaigns">
+    <div class="alert alert-warning">
+      No Campaigns Found!
+    </div>
+  </div>
+</ng-template>
+
+
+<div *ngIf="showModal">
+  <div id="overlay" (click)="showModal=false"></div>
+  <div id="campaign-modal">
+    <div class="header">
+      Title
+    </div>
+    <div class="content">
+      <form #modalForm="ngForm" (ngSubmit)="updateCampaign(modalForm)">
+        <div class="mb-10">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" [(ngModel)]="values.title" ngModel required>
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" [(ngModel)]="values.description" ngModel required>
+        </div>
+        <div class="buttons">
+          <button type="submit">Submit</button>
+          <button type="button" (click)="closeModal()">Exit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

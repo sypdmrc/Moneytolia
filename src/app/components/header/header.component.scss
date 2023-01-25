@@ -1,0 +1,35 @@
+:host{
+  display: block;
+  position: absolute;
+  left: 305px;
+  width: calc(100% - 305px);
+}
+#header {
+  background: rgb(236, 243, 248);
+  a{
+    img{
+      margin-top: 10px;
+    }
+  }
+}
+
+.header-top{
+  height: 75px;
+  display: flex;
+  align-items: center;
+
+  padding: 0 25px;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+@media (max-width:670px){
+  :host{
+    left: 50px;
+    width: calc(100% - 50px);
+    .logo img{
+      width: 150px;
+    }
+  }
+}
