@@ -26,11 +26,11 @@ export class CampaignsComponent implements OnInit{
     this.campaigns =this.campaignService.getCampaigns();
   }
 
-  openModal(id:number,title:string,description:string) {
+  openModal(item:any) {
     this.showModal = true
-    this.id=id;
-    this.values.title=title;
-    this.values.description=description
+    this.id=item.id;
+    this.values.title=item.title;
+    this.values.description=item.description
   }
 
   updateCampaign(modalForm:NgForm) {
