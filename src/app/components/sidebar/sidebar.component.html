@@ -10,11 +10,11 @@
   </div>
   <div class="list">
     <ul class="list-ul">
-      <li>
-        <a routerLink="/campaigns">List Campaigns</a>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/campaigns"  >List Campaigns</a>
       </li>
-      <li>
-        <a routerLink="/campaigns/create">Create Campaign</a>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/campaigns/create" >Create Campaign</a>
       </li>
     </ul>
   </div>

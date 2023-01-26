@@ -47,10 +47,9 @@
       li {
         position: relative;
         height: 50px;
-        margin: 0 10px;
+        margin: 10px 0;
         width: 100%;
         line-height: 50px;
-
         &:hover {
           background: #6e6e809e;
           border-radius: 10px;
@@ -62,7 +61,12 @@
           color: #fff;
           display: flex;
           align-items: center;
+          padding-left: 5px;
         }
+      }
+      li.active{
+        background: #6e6e809e;
+        border-radius: 10px;
       }
     }
   }
