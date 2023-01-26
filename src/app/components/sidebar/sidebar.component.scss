@@ -80,6 +80,10 @@
   #sidebar {
     padding: 0;
 
+    .list{
+      display: none;
+    }
+
     .mobile-menu {
       height: 100px;
       border: none;
